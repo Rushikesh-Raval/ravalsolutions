@@ -55,7 +55,7 @@ const Header = ({ setView, currentView }) => {
           className="flex items-center space-x-2"
         >
           <div className="w-8 h-8 bg-teal-500 rounded-md flex items-center justify-center">
-            <span className="text-white font-bold text-xl">R</span>
+            <span className="text-white font-bold text-xl">C</span>
           </div>
           <span className="text-xl font-bold text-slate-900">
             Caspian<span className="text-teal-600">Digitals</span>
