@@ -85,12 +85,20 @@ const LeadForm = () => {
 
                   <input
                     required
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
+                    type="phone"
+                    name="phone"
+                    placeholder="Contact Number"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                   />
                 </div>
+
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                />
 
                 <ValidationError
                   prefix="Email"
