@@ -58,7 +58,7 @@ const Header = ({ setView, currentView }) => {
             <span className="text-white font-bold text-xl">R</span>
           </div>
           <span className="text-xl font-bold text-slate-900">
-            Raval<span className="text-teal-600">Solutions</span>
+            Caspian<span className="text-teal-600">Digitals</span>
           </span>
         </button>
 

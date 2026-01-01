@@ -43,7 +43,7 @@ const Footer = ({ setView }) => {
                 <span className="text-white font-bold text-2xl">R</span>
               </div>
               <span className="text-2xl font-bold">
-                Raval<span className="text-teal-500">Solutions</span>
+                Caspian<span className="text-teal-500">Digitals</span>
               </span>
             </div>
             <p className="text-slate-400 mb-8 max-w-sm">
@@ -107,7 +107,7 @@ const Footer = ({ setView }) => {
         {/* Bottom */}
         <div className="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-sm">
-            © 2024 Raval Solutions.
+            © 2024 Caspian Digitals.
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-400">
             <button onClick={() => setView('privacy')}>Privacy Policy</button>
