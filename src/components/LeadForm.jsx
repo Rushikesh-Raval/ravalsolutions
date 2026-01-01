@@ -1,24 +1,7 @@
 import React, { useState } from 'react';
 
 const LeadForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    business: '',
-    message: '',
-  });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // 🛡️ Honeypot anti-bot
-    if (e.target.company?.value) return;
-
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
 
   return (
     <div className="container mx-auto px-6">
@@ -38,7 +21,6 @@ const LeadForm = () => {
 
           <div className="space-y-8 max-w-md">
 
-            {/* Phone */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-teal-400 shrink-0">
                 📞
@@ -46,11 +28,10 @@ const LeadForm = () => {
               <div>
                 <h4 className="font-bold text-lg">Call Us Directly</h4>
                 <p className="text-slate-400 text-sm">Mon–Fri, 9am–6pm EST</p>
-                <p className="text-teal-400 font-semibold mt-1"> +91 9326580094</p>
+                <p className="text-teal-400 font-semibold mt-1">+91 9326580094</p>
               </div>
             </div>
 
-            {/* Email */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-teal-400 shrink-0">
                 ✉️
@@ -84,7 +65,12 @@ const LeadForm = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                action="https://formspree.io/f/mgovoqqe"
+                method="POST"
+                className="space-y-5"
+                onSubmit={() => setIsSubmitted(true)}
+              >
 
                 {/* Honeypot */}
                 <input
@@ -98,44 +84,40 @@ const LeadForm = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
                     required
+                    name="name"
                     placeholder="Full Name"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
                   />
 
                   <input
                     required
-                    type="email"
-                    placeholder="Email Address"
+                    type="phone number"
+                    name="phone number"
+                    placeholder="Contact Number"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
                   />
                 </div>
 
+                  <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                />
+
                 <input
                   required
+                  name="business"
                   placeholder="Business Name"
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                  value={formData.business}
-                  onChange={(e) =>
-                    setFormData({ ...formData, business: e.target.value })
-                  }
                 />
 
                 <textarea
                   rows="4"
+                  name="message"
                   placeholder="How can we help?"
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 resize-none"
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
                 />
 
                 <button
