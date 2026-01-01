@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const LeadForm = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm("mgovoqqe");
 
   return (
     <div className="container mx-auto px-6">
@@ -20,7 +21,6 @@ const LeadForm = () => {
           </p>
 
           <div className="space-y-8 max-w-md">
-
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-teal-400 shrink-0">
                 📞
@@ -28,7 +28,7 @@ const LeadForm = () => {
               <div>
                 <h4 className="font-bold text-lg">Call Us Directly</h4>
                 <p className="text-slate-400 text-sm">Mon–Fri, 9am–6pm EST</p>
-                <p className="text-teal-400 font-semibold mt-1">+91 9326580094</p>
+                <p className="text-teal-400 font-semibold mt-1"> +91 9326580094</p>
               </div>
             </div>
 
@@ -44,7 +44,6 @@ const LeadForm = () => {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -52,7 +51,7 @@ const LeadForm = () => {
         <div className="w-full">
           <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-slate-100">
 
-            {isSubmitted ? (
+            {state.succeeded ? (
               <div className="text-center py-16">
                 <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   ✓
@@ -65,12 +64,7 @@ const LeadForm = () => {
                 </p>
               </div>
             ) : (
-              <form
-                action="https://formspree.io/f/mgovoqqe"
-                method="POST"
-                className="space-y-5"
-                onSubmit={() => setIsSubmitted(true)}
-              >
+              <form onSubmit={handleSubmit} className="space-y-5">
 
                 {/* Honeypot */}
                 <input
@@ -91,19 +85,17 @@ const LeadForm = () => {
 
                   <input
                     required
-                    type="phone number"
-                    name="phone number"
-                    placeholder="Contact Number"
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                   />
                 </div>
 
-                  <input
-                  required
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
                 />
 
                 <input
@@ -120,9 +112,16 @@ const LeadForm = () => {
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 resize-none"
                 />
 
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
+
                 <button
                   type="submit"
-                  className="w-full bg-teal-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-teal-600 transition shadow-lg"
+                  disabled={state.submitting}
+                  className="w-full bg-teal-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-teal-600 transition shadow-lg disabled:opacity-60"
                 >
                   Get Your Free Website Audit
                 </button>
