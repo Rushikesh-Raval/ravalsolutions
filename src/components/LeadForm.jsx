@@ -4,11 +4,13 @@ import { useForm, ValidationError } from "@formspree/react";
 const LeadForm = () => {
   const [formData, setFormData] = useState({
     name: "",
+    whatsapp: "",
     email: "",
     business: "",
     message: "",
   });
 
+  const [phoneError, setPhoneError] = useState("");
   const [state, handleSubmit] = useForm("mgovoqqe");
 
   return (
@@ -67,7 +69,19 @@ const LeadForm = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                onSubmit={(e) => {
+                  const digits = formData.whatsapp.replace(/\D/g, "");
+                  if (digits.length < 10) {
+                    e.preventDefault();
+                    setPhoneError("Enter a valid phone number");
+                    return;
+                  }
+                  setPhoneError("");
+                  handleSubmit(e);
+                }}
+                className="space-y-5"
+              >
                 <input
                   type="text"
                   name="company"
@@ -81,7 +95,7 @@ const LeadForm = () => {
                     required
                     name="name"
                     placeholder="Full Name"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -90,22 +104,32 @@ const LeadForm = () => {
 
                   <input
                     required
-                    type="whatsapp"
+                    type="tel"
                     name="whatsapp"
-                    placeholder="WhatsApp Number"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                    placeholder="Country Code & Whatsapp"
+                    inputMode="tel"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                     value={formData.whatsapp}
-                    onChange={(e) =>
-                      setFormData({ ...formData, whatsapp: e.target.value })
-                    }
+                    onChange={(e) => {
+                      const allowed = e.target.value.replace(
+                        /[^0-9+()\-\s]/g,
+                        ""
+                      );
+                      setFormData({ ...formData, whatsapp: allowed });
+                    }}
                   />
                 </div>
+
+                {phoneError && (
+                  <p className="text-sm text-red-500">{phoneError}</p>
+                )}
+
                 <input
                   required
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -121,7 +145,7 @@ const LeadForm = () => {
                   required
                   name="business"
                   placeholder="Business Name"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                   value={formData.business}
                   onChange={(e) =>
                     setFormData({ ...formData, business: e.target.value })
@@ -132,7 +156,7 @@ const LeadForm = () => {
                   rows="4"
                   name="message"
                   placeholder="How can we help?"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30 resize-none"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
