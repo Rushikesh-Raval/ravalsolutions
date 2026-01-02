@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const LeadForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    business: '',
+    message: '',
+  });
+
   const [state, handleSubmit] = useForm("mgovoqqe");
 
   return (
     <div className="container mx-auto px-6">
       <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-        {/* LEFT CONTENT */}
         <div className="text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             Stop Losing Clients to <br className="hidden md:block" />
@@ -28,7 +34,7 @@ const LeadForm = () => {
               <div>
                 <h4 className="font-bold text-lg">Call Us Directly</h4>
                 <p className="text-slate-400 text-sm">Mon–Fri, 9am–6pm EST</p>
-                <p className="text-teal-400 font-semibold mt-1"> +91 9326580094</p>
+                <p className="text-teal-400 font-semibold mt-1">9326580094</p>
               </div>
             </div>
 
@@ -40,14 +46,13 @@ const LeadForm = () => {
                 <h4 className="font-bold text-lg">Email Support</h4>
                 <p className="text-slate-400 text-sm">Avg response: 2 hours</p>
                 <p className="text-teal-400 font-semibold mt-1">
-                  info@caspiandigitals.online
+                  info@ravalsolutions.agency
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* RIGHT FORM */}
         <div className="w-full">
           <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-slate-100">
 
@@ -66,7 +71,6 @@ const LeadForm = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
 
-                {/* Honeypot */}
                 <input
                   type="text"
                   name="company"
@@ -81,36 +85,36 @@ const LeadForm = () => {
                     name="name"
                     placeholder="Full Name"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                   />
 
                   <input
                     required
-                    type="phone"
-                    name="phone"
-                    placeholder="Contact Number"
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                   />
                 </div>
 
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                />
-
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
-                />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
 
                 <input
                   required
                   name="business"
                   placeholder="Business Name"
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                  value={formData.business}
+                  onChange={(e) =>
+                    setFormData({ ...formData, business: e.target.value })
+                  }
                 />
 
                 <textarea
@@ -118,13 +122,13 @@ const LeadForm = () => {
                   name="message"
                   placeholder="How can we help?"
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 resize-none"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                 />
 
-                <ValidationError
-                  prefix="Message"
-                  field="message"
-                  errors={state.errors}
-                />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
 
                 <button
                   type="submit"
