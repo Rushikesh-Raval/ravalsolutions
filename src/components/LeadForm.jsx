@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import React, { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const LeadForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    business: '',
-    message: '',
+    name: "",
+    email: "",
+    business: "",
+    message: "",
   });
 
   const [state, handleSubmit] = useForm("mgovoqqe");
@@ -14,7 +14,6 @@ const LeadForm = () => {
   return (
     <div className="container mx-auto px-6">
       <div className="grid lg:grid-cols-2 gap-16 items-start">
-
         <div className="text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             Stop Losing Clients to <br className="hidden md:block" />
@@ -22,8 +21,8 @@ const LeadForm = () => {
           </h2>
 
           <p className="text-slate-300 text-lg mb-10 leading-relaxed max-w-xl">
-            Ready to grow your business? Fill out the form for a 100% free website audit.
-            No obligation — just expert advice.
+            Ready to grow your business? Fill out the form for a 100% free
+            website audit. No obligation — just expert advice.
           </p>
 
           <div className="space-y-8 max-w-md">
@@ -55,7 +54,6 @@ const LeadForm = () => {
 
         <div className="w-full">
           <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-slate-100">
-
             {state.succeeded ? (
               <div className="text-center py-16">
                 <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -70,7 +68,6 @@ const LeadForm = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-
                 <input
                   type="text"
                   name="company"
@@ -93,18 +90,32 @@ const LeadForm = () => {
 
                   <input
                     required
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
+                    type="whatsapp"
+                    name="whatsapp"
+                    placeholder="WhatsApp Number"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
-                    value={formData.email}
+                    value={formData.whatsapp}
                     onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
+                      setFormData({ ...formData, whatsapp: e.target.value })
                     }
                   />
                 </div>
-
-                <ValidationError prefix="Email" field="email" errors={state.errors} />
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
 
                 <input
                   required
@@ -128,7 +139,11 @@ const LeadForm = () => {
                   }
                 />
 
-                <ValidationError prefix="Message" field="message" errors={state.errors} />
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
 
                 <button
                   type="submit"
@@ -145,7 +160,6 @@ const LeadForm = () => {
             )}
           </div>
         </div>
-
       </div>
     </div>
   );
