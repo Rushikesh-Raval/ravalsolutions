@@ -17,6 +17,7 @@ const Header = ({ setView, currentView }) => {
     { name: 'Portfolio', type: 'anchor', value: '#portfolio' },
     { name: 'Why Us', type: 'anchor', value: '#why-us' },
     { name: 'FAQ', type: 'anchor', value: '#faq' },
+    { name: 'Policy', type: 'view', value: 'policy' }, // ✅ ADDED
   ];
 
   const handleNavClick = (link) => {
@@ -24,13 +25,14 @@ const Header = ({ setView, currentView }) => {
 
     if (link.type === 'view') {
       setView(link.value);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       if (currentView !== 'home') {
         setView('home');
         setTimeout(() => {
           const target = document.querySelector(link.value);
           if (target) target.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
+        }, 80);
       } else {
         const target = document.querySelector(link.value);
         if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -47,10 +49,12 @@ const Header = ({ setView, currentView }) => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
+        {/* Logo */}
         <button
           onClick={() => {
             setView('home');
             setIsMobileMenuOpen(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           className="flex items-center space-x-2"
         >
@@ -62,14 +66,14 @@ const Header = ({ setView, currentView }) => {
           </span>
         </button>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => handleNavClick(link)}
               className={`text-sm font-medium transition-colors ${
-                currentView === link.value
+                link.type === 'view' && currentView === link.value
                   ? 'text-teal-600'
                   : 'text-slate-600 hover:text-teal-600'
               }`}
@@ -77,6 +81,7 @@ const Header = ({ setView, currentView }) => {
               {link.name}
             </button>
           ))}
+
           <button
             onClick={() =>
               handleNavClick({
@@ -108,7 +113,7 @@ const Header = ({ setView, currentView }) => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-t shadow-xl p-6 flex flex-col space-y-4">
           {navLinks.map((link) => (
@@ -120,6 +125,7 @@ const Header = ({ setView, currentView }) => {
               {link.name}
             </button>
           ))}
+
           <button
             onClick={() =>
               handleNavClick({

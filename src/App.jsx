@@ -10,7 +10,8 @@ import LeadForm from './components/LeadForm';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ClientPortal from './components/ClientPortal';
-import PrivacyPolicy from './components/PrivacyPolicy';
+// import PrivacyPolicy from './components/PrivacyPolicy';
+import PolicyPage from './components/PolicyPage';
 import ServicesPage from './components/ServicesPage';
 
 const App = () => {
@@ -59,7 +60,7 @@ const App = () => {
         ) : view === 'portal' ? (
           <ClientPortal />
         ) : (
-          <PrivacyPolicy />
+          <PolicyPage />
         )}
       </main>
 
