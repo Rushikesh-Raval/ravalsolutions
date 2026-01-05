@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Header = ({ setView, currentView }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,34 +8,35 @@ const Header = ({ setView, currentView }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Services', type: 'view', value: 'services' },
-    { name: 'Portfolio', type: 'anchor', value: '#portfolio' },
-    { name: 'Why Us', type: 'anchor', value: '#why-us' },
-    { name: 'FAQ', type: 'anchor', value: '#faq' },
-    { name: 'Policy', type: 'view', value: 'policy' }, // ✅ ADDED
+    { name: "Services", type: "view", value: "services" },
+    { name: "Portfolio", type: "anchor", value: "#portfolio" },
+    { name: "Why Us", type: "anchor", value: "#why-us" },
+    { name: "FAQ", type: "anchor", value: "#faq" },
+    { name: "Policy", type: "view", value: "policy" },
+    { name: "Refund And Cancellation", type: "view", value: "refund-policy" }, // ✅ FIXED
   ];
 
   const handleNavClick = (link) => {
     setIsMobileMenuOpen(false);
 
-    if (link.type === 'view') {
+    if (link.type === "view") {
       setView(link.value);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      if (currentView !== 'home') {
-        setView('home');
+      if (currentView !== "home") {
+        setView("home");
         setTimeout(() => {
           const target = document.querySelector(link.value);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
+          if (target) target.scrollIntoView({ behavior: "smooth" });
         }, 80);
       } else {
         const target = document.querySelector(link.value);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        if (target) target.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -44,17 +45,17 @@ const Header = ({ setView, currentView }) => {
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? 'bg-white shadow-md py-3'
-          : 'bg-transparent py-6'
+          ? "bg-white shadow-md py-3"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <button
           onClick={() => {
-            setView('home');
+            setView("home");
             setIsMobileMenuOpen(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="flex items-center space-x-2"
         >
@@ -73,9 +74,9 @@ const Header = ({ setView, currentView }) => {
               key={link.name}
               onClick={() => handleNavClick(link)}
               className={`text-sm font-medium transition-colors ${
-                link.type === 'view' && currentView === link.value
-                  ? 'text-teal-600'
-                  : 'text-slate-600 hover:text-teal-600'
+                link.type === "view" && currentView === link.value
+                  ? "text-teal-600"
+                  : "text-slate-600 hover:text-teal-600"
               }`}
             >
               {link.name}
@@ -85,9 +86,9 @@ const Header = ({ setView, currentView }) => {
           <button
             onClick={() =>
               handleNavClick({
-                name: 'Contact',
-                type: 'anchor',
-                value: '#contact',
+                name: "Contact",
+                type: "anchor",
+                value: "#contact",
               })
             }
             className="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 shadow-md"
@@ -129,9 +130,9 @@ const Header = ({ setView, currentView }) => {
           <button
             onClick={() =>
               handleNavClick({
-                name: 'Contact',
-                type: 'anchor',
-                value: '#contact',
+                name: "Contact",
+                type: "anchor",
+                value: "#contact",
               })
             }
             className="bg-teal-500 text-white py-4 rounded-xl font-bold"

@@ -10,9 +10,9 @@ import LeadForm from './components/LeadForm';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ClientPortal from './components/ClientPortal';
-// import PrivacyPolicy from './components/PrivacyPolicy';
 import PolicyPage from './components/PolicyPage';
 import ServicesPage from './components/ServicesPage';
+import CancellationRefundPage from './components/CancellationAndRefund'; // ✅ NEW
 
 const App = () => {
   const [view, setView] = useState('home');
@@ -59,6 +59,8 @@ const App = () => {
           <ServicesPage setView={navigateTo} />
         ) : view === 'portal' ? (
           <ClientPortal />
+        ) : view === 'refund-policy' ? (        // ✅ NEW
+          <CancellationRefundPage />             // ✅ NEW
         ) : (
           <PolicyPage />
         )}
