@@ -19,7 +19,7 @@ const Header = ({ setView, currentView }) => {
     { name: "FAQ", type: "anchor", value: "#faq" },
     { name: "Terms and Conditions", type: "view", value: "termsandconditions" },
     {
-      name: "Cancellation And Refund",
+      name: "Cancellation And Refunds",
       type: "view",
       value: "cancellationandrefunds",
     },
