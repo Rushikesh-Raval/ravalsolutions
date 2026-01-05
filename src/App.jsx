@@ -28,19 +28,19 @@ const App = () => {
   };
 
   useEffect(() => {
-    const path = window.location.pathname.replace("/", "");
+    const normalizePath = (path) => path.replace(/^\/+|\/+$/g, "");
+
+    const path = normalizePath(window.location.pathname);
+
     if (path) {
       setView(path);
     } else {
       setView("home");
     }
 
-    const handlePopState = (event) => {
-      if (event.state?.view) {
-        setView(event.state.view);
-      } else {
-        setView("home");
-      }
+    const handlePopState = () => {
+      const newPath = normalizePath(window.location.pathname);
+      setView(newPath || "home");
     };
 
     window.addEventListener("popstate", handlePopState);
