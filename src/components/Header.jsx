@@ -17,8 +17,8 @@ const Header = ({ setView, currentView }) => {
     { name: "Portfolio", type: "anchor", value: "#portfolio" },
     { name: "Why Us", type: "anchor", value: "#why-us" },
     { name: "FAQ", type: "anchor", value: "#faq" },
-    { name: "Terms and Conditions", type: "view", value: "terms and conditions" },
-    { name: "Refund And Cancellation", type: "view", value: "cancellation and refunds" }, // ✅ FIXED
+    { name: "Terms and Conditions", type: "view", value: "termsandconditions" },
+    { name: "Refund And Cancellation", type: "view", value: "cancellationandrefunds" }, // ✅ FIXED
   ];
 
   const handleNavClick = (link) => {
