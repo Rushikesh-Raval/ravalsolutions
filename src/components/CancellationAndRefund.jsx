@@ -24,9 +24,9 @@ const CancellationAndRefund = ({ setView }) => {
           </h1>
           <div className="w-24 h-1.5 bg-teal-500 mx-auto mb-10 rounded-full"></div>
           <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            This Cancellation and Refund Policy outlines the terms under which
-            services may be canceled and payments may be refunded. By engaging
-            our web development services, you agree to the terms described below.
+            Caspian Digitals believes in helping its customers as far as possible
+            and has therefore adopted a transparent and fair cancellation and
+            refund policy for its digital services.
           </p>
         </div>
       </section>
@@ -38,125 +38,107 @@ const CancellationAndRefund = ({ setView }) => {
           {/* 1 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">1.</span> Project Cancellation by Client
+              <span className="text-teal-500 mr-3">1.</span> Nature of Services
             </h2>
-            <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>Clients may request cancellation at any time via written email notice.</li>
-              <li>Cancellation takes effect on the date the request is received.</li>
-              <li>Work completed up to the cancellation date is non-refundable.</li>
-              <li>Any unpaid balance for completed work may still be due.</li>
-            </ul>
+            <p className="text-slate-600 text-lg">
+              Caspian Digitals provides custom-made digital services including
+              website development, UI/UX design, SEO, consulting, and related
+              solutions. As all services are tailored to individual client
+              requirements, they are treated as made-to-order services.
+            </p>
           </div>
 
           {/* 2 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">2.</span> Project Cancellation by Agency
+              <span className="text-teal-500 mr-3">2.</span> Cancellation Policy
             </h2>
-            <p className="text-slate-600 text-lg mb-4">
-              We may cancel or suspend a project if:
-            </p>
             <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>Required information or approvals are not provided in time</li>
-              <li>The client becomes unresponsive for an extended period</li>
-              <li>Payment obligations are not met</li>
-              <li>The project scope changes significantly without agreement</li>
+              <li>
+                Cancellation requests will be considered only if submitted
+                before the commencement of work on the project.
+              </li>
+              <li>
+                Once the project has been initiated or resources have been
+                allocated, cancellation requests may not be entertained.
+              </li>
+              <li>
+                Requests must be made in writing through official communication
+                channels.
+              </li>
             </ul>
-            <p className="text-slate-600 text-lg mt-4">
-              In such cases, work completed up to the cancellation date will be billed.
-            </p>
           </div>
 
           {/* 3 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">3.</span> Refund Eligibility and Conditions
+              <span className="text-teal-500 mr-3">3.</span> Refund Policy
             </h2>
             <p className="text-slate-600 text-lg mb-4">
-              Refunds are evaluated on a case-by-case basis depending on:
+              Due to the custom nature of digital services:
             </p>
             <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>The project stage at cancellation</li>
-              <li>The amount of work completed</li>
-              <li>Costs incurred on the client’s behalf</li>
+              <li>
+                Payments made for initiated or completed work are
+                non-refundable.
+              </li>
+              <li>
+                Refunds, if applicable, are evaluated on a case-by-case basis.
+              </li>
+              <li>
+                No refunds will be issued for delays caused by lack of client
+                communication, feedback, or required materials.
+              </li>
             </ul>
-            <p className="text-slate-600 text-lg mt-4">
-              Refunds are not guaranteed and may be partial.
-            </p>
           </div>
 
           {/* 4 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">4.</span> Non-Refundable Fees
+              <span className="text-teal-500 mr-3">4.</span> Quality Concerns
             </h2>
-            <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>Upfront deposits</li>
-              <li>Discovery, planning, or strategy fees</li>
-              <li>Initial setup or onboarding fees</li>
-              <li>Delivered or approved services</li>
-            </ul>
+            <p className="text-slate-600 text-lg">
+              If a client believes that the delivered service does not meet the
+              agreed specifications, they must notify our support team within a
+              reasonable timeframe. The concern will be reviewed internally,
+              and appropriate corrective action will be taken if valid.
+            </p>
           </div>
 
           {/* 5 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">5.</span> Milestone-Based Payments
+              <span className="text-teal-500 mr-3">5.</span> Non-Refundable Items
             </h2>
             <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>Each milestone covers work for that phase</li>
-              <li>Completed milestones are non-refundable</li>
-              <li>Unstarted milestones may be partially refundable at discretion</li>
+              <li>Advance or onboarding fees</li>
+              <li>Discovery and strategy work</li>
+              <li>Completed milestones or delivered assets</li>
+              <li>Third-party tools, licenses, hosting, or plugins</li>
             </ul>
           </div>
 
           {/* 6 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">6.</span> Refund Timeline and Method
+              <span className="text-teal-500 mr-3">6.</span> Refund Timeline
             </h2>
-            <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>Approved refunds are processed within 7–14 business days</li>
-              <li>Refunds use the original payment method where possible</li>
-              <li>Processing time depends on the payment provider</li>
-            </ul>
+            <p className="text-slate-600 text-lg">
+              If a refund is approved, it will be processed within 7–14 business
+              days using the original payment method. Processing time may vary
+              depending on the payment provider.
+            </p>
           </div>
 
           {/* 7 */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">7.</span> No-Refund Circumstances
-            </h2>
-            <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg">
-              <li>Client-initiated scope changes</li>
-              <li>Client delays or lack of feedback</li>
-              <li>Third-party tools, licenses, hosting, or integrations</li>
-              <li>Projects abandoned or paused without notice</li>
-            </ul>
-          </div>
-
-          {/* 8 */}
-          <div>
-            <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">8.</span> Dispute Resolution and Governing Law
-            </h2>
-            <p className="text-slate-600 text-lg mb-4">
-              Disputes should first be resolved through good-faith communication.
-            </p>
-            <p className="text-slate-600 text-lg">
-              If unresolved, disputes will be governed by United States law and the
-              applicable state of business registration.
-            </p>
-          </div>
-
-          {/* 9 */}
-          <div>
-            <h2 className="text-3xl font-bold mb-6">
-              <span className="text-teal-500 mr-3">9.</span> Policy Updates
+              <span className="text-teal-500 mr-3">7.</span> Policy Updates
             </h2>
             <p className="text-slate-600 text-lg">
-              This policy may be updated periodically. The latest version applies to
-              all new engagements.
+              Caspian Digitals reserves the right to update this policy at any
+              time. The latest version will apply to all new and ongoing
+              engagements.
             </p>
           </div>
 
@@ -169,13 +151,20 @@ const CancellationAndRefund = ({ setView }) => {
           Have questions about our policy?
         </h2>
         <p className="text-slate-400 mb-10 max-w-2xl mx-auto">
-          Contact our support team for clarification before starting your project.
+          Contact our support team for clarification before starting your
+          project.
         </p>
         <div className="flex justify-center gap-4">
-          <button onClick={goToContact} className="px-10 py-5 bg-teal-500 text-white font-bold rounded-xl">
+          <button
+            onClick={goToContact}
+            className="px-10 py-5 bg-teal-500 text-white font-bold rounded-xl"
+          >
             Contact Support
           </button>
-          <button onClick={goHome} className="px-10 py-5 border border-slate-700 text-slate-300 rounded-xl">
+          <button
+            onClick={goHome}
+            className="px-10 py-5 border border-slate-700 text-slate-300 rounded-xl"
+          >
             Back to Home
           </button>
         </div>
