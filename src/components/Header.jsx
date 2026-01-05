@@ -18,7 +18,11 @@ const Header = ({ setView, currentView }) => {
     { name: "Why Us", type: "anchor", value: "#why-us" },
     { name: "FAQ", type: "anchor", value: "#faq" },
     { name: "Terms and Conditions", type: "view", value: "termsandconditions" },
-    { name: "Refund And Cancellation", type: "view", value: "cancellationandrefunds" }, // ✅ FIXED
+    {
+      name: "Cancellation And Refund",
+      type: "view",
+      value: "cancellationandrefunds",
+    },
   ];
 
   const handleNavClick = (link) => {
@@ -103,12 +107,30 @@ const Header = ({ setView, currentView }) => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
             </svg>
           )}
         </button>
