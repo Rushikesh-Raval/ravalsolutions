@@ -84,7 +84,7 @@ const App = () => {
           <ServicesPage setView={navigateTo} />
         ) : view === "portal" ? (
           <ClientPortal />
-        ) : view === "cancellation and refunds" ? (
+        ) : view === "cancellationandrefunds" ? (
           <CancellationRefundPage />
         ) : (
           <PolicyPage />
