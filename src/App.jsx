@@ -1,33 +1,58 @@
-import React, { useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import TrustSignals from './components/TrustSignals';
-import Services from './components/Services';
-import WhyUs from './components/WhyUs';
-import Portfolio from './components/Portfolio';
-import LeadForm from './components/LeadForm';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
-import ClientPortal from './components/ClientPortal';
-import PolicyPage from './components/PolicyPage';
-import ServicesPage from './components/ServicesPage';
-import CancellationRefundPage from './components/CancellationAndRefund'; // ✅ NEW
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import TrustSignals from "./components/TrustSignals";
+import Services from "./components/Services";
+import WhyUs from "./components/WhyUs";
+import Portfolio from "./components/Portfolio";
+import LeadForm from "./components/LeadForm";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
+import ClientPortal from "./components/ClientPortal";
+import PolicyPage from "./components/PolicyPage";
+import ServicesPage from "./components/ServicesPage";
+import CancellationRefundPage from "./components/CancellationAndRefund";
 
 const App = () => {
-  const [view, setView] = useState('home');
+  const [view, setView] = useState("home");
 
   const navigateTo = (newView) => {
     setView(newView);
+    window.history.pushState(
+      { view: newView },
+      "",
+      newView === "home" ? "/" : `/${newView}`
+    );
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    const path = window.location.pathname.replace("/", "");
+    if (path) {
+      setView(path);
+    } else {
+      setView("home");
+    }
+
+    const handlePopState = (event) => {
+      if (event.state?.view) {
+        setView(event.state.view);
+      } else {
+        setView("home");
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
       <Header setView={navigateTo} currentView={view} />
 
       <main>
-        {view === 'home' ? (
+        {view === "home" ? (
           <>
             <section id="hero">
               <Hero />
@@ -55,12 +80,12 @@ const App = () => {
               <FAQ />
             </section>
           </>
-        ) : view === 'services' ? (
+        ) : view === "services" ? (
           <ServicesPage setView={navigateTo} />
-        ) : view === 'portal' ? (
+        ) : view === "portal" ? (
           <ClientPortal />
-        ) : view === 'refund-policy' ? (        // ✅ NEW
-          <CancellationRefundPage />             // ✅ NEW
+        ) : view === "cancellation and refunds" ? (
+          <CancellationRefundPage />
         ) : (
           <PolicyPage />
         )}
