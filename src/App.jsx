@@ -13,6 +13,7 @@ import ClientPortal from "./components/ClientPortal";
 import PolicyPage from "./components/PolicyPage";
 import ServicesPage from "./components/ServicesPage";
 import CancellationRefundPage from "./components/CancellationAndRefund";
+import PaymentPartners from "./components/PaymentPartners";
 
 const App = () => {
   const [view, setView] = useState("home");
@@ -90,7 +91,7 @@ const App = () => {
           <PolicyPage />
         )}
       </main>
-
+      <PaymentPartners />
       <Footer setView={navigateTo} />
     </div>
   );

@@ -118,7 +118,6 @@ const ServicesPage = ({ setView }) => {
                   alt={service.title}
                   className="rounded-2xl shadow-xl w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
             </div>
           </div>
