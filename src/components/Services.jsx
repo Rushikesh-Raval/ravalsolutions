@@ -17,7 +17,7 @@ const Services = ({ setView }) => {
     {
       title: 'Website Redesign',
       description:
-        'Modernize your outdated site to improve user experience and bring it up to 2024 standards.',
+        'Modernize your outdated site to improve user experience and bring it up to 2026 standards.',
       tag: 'ROI Focused',
     },
     {
@@ -77,7 +77,7 @@ const Services = ({ setView }) => {
               {service.description}
             </p>
 
-            <button
+            {/* <button
               onClick={() => setView('services')}
               className="text-teal-600 font-semibold flex items-center group-hover:translate-x-1 transition-transform"
             >
@@ -95,7 +95,7 @@ const Services = ({ setView }) => {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </button>
+            </button> */}
           </div>
         ))}
       </div>

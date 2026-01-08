@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import TrustSignals from "./components/TrustSignals";
 import Services from "./components/Services";
 import WhyUs from "./components/WhyUs";
-import Portfolio from "./components/Portfolio";
+// import Portfolio from "./components/Portfolio";
 import LeadForm from "./components/LeadForm";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
@@ -15,6 +15,7 @@ import ServicesPage from "./components/ServicesPage";
 import CancellationRefundPage from "./components/CancellationAndRefund";
 import PaymentPartners from "./components/PaymentPartners";
 import FullManagementSection from "./components/FullManagementSection";
+import NichesSection from "./components/NichesSection";
 const App = () => {
   const [view, setView] = useState("home");
 
@@ -72,6 +73,9 @@ const App = () => {
               <FullManagementSection />
             </section>
 
+            <section id="niches" className="bg-slate-50 py-20">
+              <NichesSection />
+            </section>
             {/* <section id="portfolio" className="py-20">
               <Portfolio />
             </section> */}

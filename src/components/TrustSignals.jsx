@@ -41,7 +41,7 @@ const TrustSignals = () => {
       ),
     },
     {
-      title: 'Ironclad Security',
+      title: 'Ironclad Level Security',
       desc: 'SSL certificates and secure coding to protect your business data.',
       icon: (
         <svg
