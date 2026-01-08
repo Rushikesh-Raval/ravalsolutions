@@ -173,7 +173,7 @@ const PolicyPage = () => {
             {/* PRIVACY POLICY */}
             <section id="privacy-policy">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider mb-6">
-                Updated June 2024
+                Updated June 2025
               </div>
               <SectionHeader title="Privacy Policy" id="privacy-policy" />
               <Paragraph>
