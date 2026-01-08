@@ -1,15 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-/**
- * PolicyPage - Standalone JSX Component
- *
- * Features:
- * - Pure JSX (No TypeScript types)
- * - Self-contained sub-components
- * - Interactive sticky sidebar navigation
- * - Responsive Tailwind-based design
- * - Premium NexusDev Branding
- */
 
 const PolicyPage = () => {
   const [activeSection, setActiveSection] = useState("privacy-policy");
@@ -106,11 +96,14 @@ const PolicyPage = () => {
         e.preventDefault();
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
       }}
-      className={`block px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border-l-2 ${
-        activeSection === id
-          ? "bg-teal-50 text-teal-700 border-teal-600 translate-x-1"
-          : "text-slate-500 border-transparent hover:bg-slate-50 hover:text-slate-900"
-      }`}
+      className={"block px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border-l-2 text-slate-500 border-transparent hover:bg-slate-50 hover:text-slate-900"}
+      // ------------------
+      //  className={`block px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border-l-2 ${
+      //   activeSection === id
+      //     ? "bg-teal-50 text-teal-700 border-teal-600 translate-x-1"
+      //     : "text-slate-500 border-transparent hover:bg-slate-50 hover:text-slate-900"
+      // }`}
+      // -------------------
     >
       {label}
     </a>
@@ -130,7 +123,7 @@ const PolicyPage = () => {
               Information
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-2xl font-medium">
-              NexusDev operates with full transparency. Our legal documents
+              Caspian Digitals operates with full transparency. Our legal documents
               ensure a secure, professional, and predictable partnership for all
               our clients.
             </p>
@@ -158,7 +151,7 @@ const PolicyPage = () => {
               <NavItem id="liability" label="Liability & Claims" />
               <NavItem id="compliance" label="Compliance Standards" />
 
-              <div className="mt-12 p-8 bg-slate-900 rounded-[2rem] shadow-2xl relative overflow-hidden">
+              {/* <div className="mt-12 p-8 bg-slate-900 rounded-[2rem] shadow-2xl relative overflow-hidden">
                 <div className="relative z-10">
                   <p className="text-teal-400 text-[10px] font-bold uppercase tracking-widest mb-3">
                     Support
@@ -171,7 +164,7 @@ const PolicyPage = () => {
                   </button>
                 </div>
                 <div className="absolute top-0 right-0 -mr-12 -mt-12 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl"></div>
-              </div>
+              </div> */}
             </div>
           </aside>
 
@@ -185,10 +178,9 @@ const PolicyPage = () => {
               <SectionHeader title="Privacy Policy" id="privacy-policy" />
               <Paragraph>
                 Your privacy is of paramount importance to us. This Privacy
-                Policy outlines how NexusDev ("we", "us", or "our") collects,
+                Policy outlines how Caspian Digitals ("we", "us", or "our") collects,
                 uses, and protects your personal information when you interact
-                with our website and services. We comply with all relevant US
-                data protection laws and follow global best practices for
+                with our website and services. We comply with global best practices for
                 privacy management.
               </Paragraph>
               <Paragraph>
@@ -220,15 +212,14 @@ const PolicyPage = () => {
               <SubHeader title="Third-Party Tools" />
               <Paragraph>
                 To deliver enterprise-grade results, we utilize trusted
-                third-party providers. We ensure these partners adhere to strict
-                privacy standards:
+                third-party providers. 
               </Paragraph>
               <CheckList
                 items={[
                   "Cloud Infrastructure: Vercel, AWS, or Google Cloud for secure deployment.",
                   "Analytics: Google Analytics for monitoring traffic patterns (anonymized).",
                   "Project Management: Slack, Notion, and Jira for collaboration data.",
-                  "Finance: Stripe for secure, PCI-compliant payment processing.",
+                  "Finance: Paypal, Razorpay, Stripe for secure, PCI-compliant payment processing.",
                 ]}
               />
             </section>
@@ -237,7 +228,7 @@ const PolicyPage = () => {
             <section id="terms-of-service">
               <SectionHeader title="Terms of Service" id="terms-of-service" />
               <Paragraph>
-                By engaging NexusDev for your web development needs, you agree
+                By engaging Caspian Digitals for your web development needs, you agree
                 to the following terms. These terms are designed to protect both
                 our agency and our clients, ensuring a clear understanding of
                 responsibilities and deliverables.
@@ -263,7 +254,7 @@ const PolicyPage = () => {
                 items={[
                   "Client Ownership: You own all custom source code, designs, and visual assets created for your specific project.",
                   "Agency Retentions: We retain ownership of our pre-existing proprietary tools, frameworks, and generic code modules.",
-                  "Promotion: Unless prohibited by an NDA, the client grants us a non-exclusive license to showcase the work in our agency portfolio.",
+                  "Promotion: Unless prohibited by an NDA, the client grants us a non-exclusive license to showcase the work in our agency portfolio if needed.",
                 ]}
               />
             </section>
@@ -271,7 +262,7 @@ const PolicyPage = () => {
             <section id="liability">
               <SubHeader title="Limitation of Liability" />
               <Paragraph>
-                NexusDev warrants that work will conform to specifications for
+                Caspian Digitals warrants that work will conform to specifications for
                 30 days post-launch. After this period, maintenance is the
                 responsibility of the client unless a support agreement is in
                 place.
@@ -319,7 +310,7 @@ const PolicyPage = () => {
             </section>
 
             {/* Final CTA Card */}
-            <section className="mt-24 mb-20 text-center">
+            {/* <section className="mt-24 mb-20 text-center">
               <div className="bg-slate-900 rounded-[3rem] p-12 lg:p-24 text-white relative overflow-hidden shadow-2xl">
                 <div className="relative z-10">
                   <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tighter">
@@ -342,11 +333,11 @@ const PolicyPage = () => {
                 <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[40rem] h-[40rem] bg-teal-500/10 rounded-full blur-[120px]"></div>
                 <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[40rem] h-[40rem] bg-teal-500/5 rounded-full blur-[120px]"></div>
               </div>
-              <p className="mt-12 text-slate-400 text-sm font-medium">
-                &copy; {new Date().getFullYear()} NexusDev Creative Inc. All
+              {/* <p className="mt-12 text-slate-400 text-sm font-medium">
+                &copy; {new Date().getFullYear()} Caspian Digitals Brand Of Raval Solutions. All
                 rights reserved.
-              </p>
-            </section>
+              </p> */}
+            {/* </section>  */}
           </main>
         </div>
       </div>

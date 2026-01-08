@@ -146,7 +146,7 @@ const CancellationAndRefund = ({ setView }) => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-32 bg-slate-900 text-center">
+      {/* <section className="py-20 md:py-32 bg-slate-900 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
           Have questions about our policy?
         </h2>
@@ -168,7 +168,7 @@ const CancellationAndRefund = ({ setView }) => {
             Back to Home
           </button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

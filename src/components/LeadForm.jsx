@@ -33,9 +33,9 @@ const LeadForm = () => {
                 📞
               </div>
               <div>
-                <h4 className="font-bold text-lg">Call Us Directly</h4>
-                <p className="text-slate-400 text-sm">Mon–Fri, 9am–6pm EST</p>
-                <p className="text-teal-400 font-semibold mt-1">9326580094</p>
+                <h4 className="font-bold text-lg">Whatsapp Us</h4>
+                <p className="text-slate-400 text-sm">Mon–Fri, 9am–6pm PT</p>
+                <p className="text-teal-400 font-semibold mt-1">+91-9326580094</p>
               </div>
             </div>
 
@@ -45,7 +45,7 @@ const LeadForm = () => {
               </div>
               <div>
                 <h4 className="font-bold text-lg">Email Support</h4>
-                <p className="text-slate-400 text-sm">Avg response: 2 hours</p>
+                <p className="text-slate-400 text-sm">Avg Response 2 hours</p>
                 <p className="text-teal-400 font-semibold mt-1">
                   info@caspiandigitals.online
                 </p>

@@ -15,7 +15,7 @@ const Header = ({ setView, currentView }) => {
   const navLinks = [
     { name: "Home", type: "view", value: "home" },
     { name: "Services", type: "view", value: "services" },
-    { name: "Portfolio", type: "anchor", value: "#portfolio" },
+    { name: "Specialisation", type: "anchor", value: "#niches" },
     { name: "Why Us", type: "anchor", value: "#why-us" },
     { name: "FAQ", type: "anchor", value: "#faq" },
     { name: "Terms and Conditions", type: "view", value: "termsandconditions" },
