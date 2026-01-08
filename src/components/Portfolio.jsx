@@ -13,6 +13,7 @@ const Portfolio = () => {
       category: 'Medical/Service',
       image: 'https://picsum.photos/seed/medical/600/400',
       description: 'Clean, professional medical booking platform.',
+      link: 'https://drama-gravy-54041045.figma.site/',
     },
     {
       title: 'TechNexus Startup',
