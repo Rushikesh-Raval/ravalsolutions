@@ -14,7 +14,7 @@ import PolicyPage from "./components/PolicyPage";
 import ServicesPage from "./components/ServicesPage";
 import CancellationRefundPage from "./components/CancellationAndRefund";
 import PaymentPartners from "./components/PaymentPartners";
-
+import FullManagementSection from "./components/FullManagementSection";
 const App = () => {
   const [view, setView] = useState("home");
 
@@ -68,10 +68,13 @@ const App = () => {
             <section id="why-us" className="bg-slate-50 py-20">
               <WhyUs />
             </section>
-
-            <section id="portfolio" className="py-20">
-              <Portfolio />
+            <section id="fullmanagement" className="bg-slate-50 py-20">
+              <FullManagementSection />
             </section>
+
+            {/* <section id="portfolio" className="py-20">
+              <Portfolio />
+            </section> */}
 
             <section id="contact" className="bg-slate-900 py-20 text-white">
               <LeadForm />

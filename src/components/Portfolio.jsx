@@ -56,7 +56,7 @@ const Portfolio = () => {
               key={idx}
               href={project.link}
               target={project.link ? '_blank' : undefined}
-              rel={project.link ? 'noopener noreferrer' : undefined}
+              rel={project.link ? 'noopener noreferrer' : undefined} 
               className="group block"
             >
               <div className="overflow-hidden rounded-2xl mb-6 shadow-md border border-slate-100">

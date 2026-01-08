@@ -32,12 +32,12 @@ const Hero = () => {
             >
               Get a Free Consultation
             </a>
-            <a
+            {/* <a
               href="#portfolio"
               className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl text-lg font-bold hover:bg-slate-50 transition-all text-center"
             >
               View Our Work
-            </a>
+            </a> */}
           </div>
 
           <div className="mt-10 flex items-center space-x-6 text-sm text-slate-500">
@@ -52,7 +52,7 @@ const Hero = () => {
               <svg className="w-5 h-5 text-teal-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
               </svg>
-              US-Based Support
+              Immediate Support
             </div>
           </div>
         </div>
@@ -69,12 +69,10 @@ const Hero = () => {
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 max-w-[200px]">
               <div className="flex items-center space-x-2 mb-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-xs font-bold text-slate-400">PERFORMANCE</span>
+                <span className="text-xs font-bold text-slate-400">PERFORMANCE<br/>SATISFACTION</span>
               </div>
               <div className="text-2xl font-bold text-slate-900">99/100</div>
-              <p className="text-[10px] text-slate-500 uppercase tracking-wider">
-                Lighthouse Score
-              </p>
+              
             </div>
           </div>
 

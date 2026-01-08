@@ -13,6 +13,7 @@ const Header = ({ setView, currentView }) => {
   }, []);
 
   const navLinks = [
+    { name: "Home", type: "view", value: "home" },
     { name: "Services", type: "view", value: "services" },
     { name: "Portfolio", type: "anchor", value: "#portfolio" },
     { name: "Why Us", type: "anchor", value: "#why-us" },
