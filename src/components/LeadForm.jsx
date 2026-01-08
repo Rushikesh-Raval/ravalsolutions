@@ -47,7 +47,7 @@ const LeadForm = () => {
                 <h4 className="font-bold text-lg">Email Support</h4>
                 <p className="text-slate-400 text-sm">Avg response: 2 hours</p>
                 <p className="text-teal-400 font-semibold mt-1">
-                  info@ravalsolutions.agency
+                  info@caspiandigitals.online
                 </p>
               </div>
             </div>

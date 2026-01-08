@@ -98,10 +98,10 @@ const FullManagementSection = () => {
             One team. One point of contact. Zero technical stress.
           </p>
 
-          <button className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-7 rounded-full transition-all duration-200 shadow-md">
+          {/* <button className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 px-7 rounded-full transition-all duration-200 shadow-md">
             Talk to us — we’ll take care of the rest
             <ArrowRight size={16} className="text-teal-400" />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

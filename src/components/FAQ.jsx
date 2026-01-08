@@ -7,27 +7,27 @@ const FAQ = () => {
     {
       question: "How much does a new website cost?",
       answer:
-        "Every project is unique, but our custom business websites typically range from $2,500 to $7,500 depending on complexity. We also offer landing pages starting at $1,200 for targeted marketing campaigns."
+        "Every business is different, and so is every website we build.We work entirely on custom requirements, not fixed templates or one-size-fits-all packages.Projects typically start from $699, with final pricing determined by:Scope of work, Features & functionality, Design complexity, Timeline & integrations"
     },
     {
       question: "How long will it take to build my site?",
       answer:
-        "Most business websites take between 2 to 4 weeks from the initial discovery call to launch. We prioritize efficient delivery without sacrificing quality or performance."
+        "Most business websites take 2–4 weeks from the initial discovery call to launch.We prioritize efficient delivery without compromising the quality of work, performance, or reliability. For time-sensitive projects, we also offer a priority build option that allows delivery in as little as one week, subject to scope and availability — without cutting corners or sacrificing quality."
     },
     {
       question: "Are you really based in the United States?",
       answer:
-        "Yes! Our core strategy and development team is located across the US. This ensures we are always available during your business hours and understand the local US market nuances."
+        "Our head office is located in Pune, Maharashtra, India — one of the major IT hubs in the country. We work with businesses globally to build and manage their digital presence in a smooth, hassle-free way. To ensure seamless collaboration, we are available during US business hours for communication, support, and ongoing discussions."
     },
     {
       question: "Will I be able to update my own website?",
       answer:
-        "Absolutely. We build most of our sites on user-friendly platforms (like Headless CMS or WordPress) and provide a 1-hour training session so you can easily update text, photos, and blog posts."
+        "Absolutely. If you prefer, we can build your website on user-friendly platforms (including headless setups) and provide a dedicated 1-hour training session. This ensures you can confidently update text, images, and blog content on your own — without relying on technical support."
     },
     {
       question: "Do you offer website maintenance?",
       answer:
-        "Yes, we have monthly care plans starting at $99/mo that include high-speed hosting, security monitoring, regular backups, and technical support."
+       "Yes, we offer monthly website care plans starting at $49/month, designed to keep your website secure, up-to-date, and running smoothly. Our care plans include site monitoring when needed so that website stays live and accessible, regular security checks to identify and prevent potential issues, ongoing maintenance to keep everything functioning properly, content updates and basic website management handled for you, and technical support for day-to-day website needs."
     }
   ];
 
