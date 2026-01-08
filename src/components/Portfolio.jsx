@@ -49,30 +49,39 @@ const Portfolio = () => {
 
       {/* Projects */}
       <div className="grid md:grid-cols-3 gap-8">
-        {projects.map((project, idx) => (
-          <div key={idx} className="group">
-            <div className="overflow-hidden rounded-2xl mb-6 shadow-md border border-slate-100">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+        {projects.map((project, idx) => {
+          const Wrapper = project.link ? 'a' : 'div';
+          return (
+            <Wrapper
+              key={idx}
+              href={project.link}
+              target={project.link ? '_blank' : undefined}
+              rel={project.link ? 'noopener noreferrer' : undefined}
+              className="group block"
+            >
+              <div className="overflow-hidden rounded-2xl mb-6 shadow-md border border-slate-100">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
 
-            <div className="flex items-center space-x-2 mb-2">
-              <span className="text-[10px] font-bold tracking-widest text-teal-600 uppercase bg-teal-50 px-2 py-0.5 rounded">
-                {project.category}
-              </span>
-            </div>
+              <div className="flex items-center space-x-2 mb-2">
+                <span className="text-[10px] font-bold tracking-widest text-teal-600 uppercase bg-teal-50 px-2 py-0.5 rounded">
+                  {project.category}
+                </span>
+              </div>
 
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
-              {project.title}
-            </h3>
-            <p className="text-slate-500 leading-relaxed">
-              {project.description}
-            </p>
-          </div>
-        ))}
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
+                {project.title}
+              </h3>
+              <p className="text-slate-500 leading-relaxed">
+                {project.description}
+              </p>
+            </Wrapper>
+          );
+        })}
       </div>
 
       {/* CTA */}
