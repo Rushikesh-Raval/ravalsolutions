@@ -22,8 +22,9 @@ const Footer = ({ setView }) => {
               Ready to grow your business?
             </h3>
             <p className="text-slate-400 text-lg">
-              Join 50+ US business owners who transformed their online presence
-              with Frontier Digital.
+              Join 1k+ of businesses across the United States improving
+              their online presence to attract more clients and increase
+              conversions.
             </p>
           </div>
           <button
@@ -54,20 +55,15 @@ const Footer = ({ setView }) => {
           {/* Services */}
           <div className="lg:col-span-2">
             <h4 className="font-bold mb-8 text-lg">Services</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-[#818FA4]">
               {[
                 "Business Websites",
                 "Landing Pages",
                 "SEO Audit",
                 "Maintenance",
               ].map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => setView("services")}
-                    className="text-slate-400 hover:text-teal-500"
-                  >
-                    {item}
-                  </button>
+                <li>
+                 {item}
                 </li>
               ))}
             </ul>
@@ -120,12 +116,12 @@ const Footer = ({ setView }) => {
                 <span className="text-xs font-bold text-teal-500 uppercase">
                   US Business Hours
                 </span>
-                <button
+                {/* <button
                   onClick={() => setView("portal")}
                   className="text-xs text-slate-400 hover:text-white"
                 >
                   Client Portal →
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -134,7 +130,7 @@ const Footer = ({ setView }) => {
         {/* Bottom */}
         <div className="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-sm">
-            © 2026 Caspian Digitals A brand of Raval Solutions
+            © 2026 Caspian Digitals A Brand of Raval Solutions
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-400">
             <button onClick={() => setView("privacy")}>Privacy Policy</button>
